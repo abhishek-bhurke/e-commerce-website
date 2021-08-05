@@ -1,0 +1,295 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-checkbox@2.0.0/dist/js/bootstrap-checkbox.js" defer></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+.container{
+  text-align: center;
+}
+#grad1
+{
+  background: #047BD5;
+}
+.navbar{
+  background: #047BD5;
+  border-width: 2px;
+  border-color: black;
+  float: left;
+}
+nav a{
+  color: white;
+  font-size: 15px;
+  height: 56px;
+  background: #047BD5;
+ border-color: white;
+}
+img{
+  float: center;
+  width:  50px;
+    height: 40px;
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: #047BD5;
+    text-align: center;
+}
+.containerstyle{
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  background-color:white;
+}
+
+.price {
+  color: grey;
+  font-size: 15px;
+}
+
+/*.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: orange;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}*/
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #047BD5;
+  width: auto;
+  text-align: left;
+  /*padding: 68px;*/
+
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  border: 5px solid black;
+    background-image: #047BD5;
+
+  text-align: center;
+}
+.imagehover:hover
+{
+  opacity: 0.2;
+  filter: alpha(opacity=30);
+}
+input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  width: 40%;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+/*.logo-image{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    /*overflow: hidden;
+    margin-top: -6px;*/
+.btn-outline-orange {
+    color: white;
+    background-color: #F7A200;
+    width: 20%;
+    /*border-color: #000000;*/
+}
+.btn-outline-blue {
+    color: white;
+    background-color: #047BD5;
+    /*border-color: #000000;*/
+}
+</style>
+<body>
+  <form ng-app="angularapp1" ng-controller="firstcontroller" name="validateform" novalidate>
+    <div id="grad1">
+    <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="yellow">E-Commerce Website</font></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+            <li><a href="productpage.html">Products</a></li>
+      <li><a href="userprofile.html">User Profile</a></li>
+      <!-- <li><a href="cart.html"><img src="mobiles/istockphoto-1206806317-612x612.jpg"class="img-fluid">&emsp;<b>{{cartno}}</a></li> -->
+    </ul>
+  </div>
+</nav>
+<center>
+    <div class="grid-container">
+  <div class="grid-item">
+<div class="container">
+      <div class="row">
+        <p><b><h3>Cart({{numberofitems}})</h3></b></p>
+  <table class="table table-striped table table-bordered table table-hover">
+            <thead style="background-color: #047BD5 ;color: white">
+                <div style="background-color: black; text-align: center; color: white ;font-size:20px"></div>
+                <tr>
+                    <th>Product Name</th>  
+                    <th>Total Price</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in cartdata ">
+                    <td>{{item.name}}</td>
+                    <td>{{item.price| currency:'₹'}}</td>
+                    
+                    <!-- <td>{{(item.price*quantity)-total| currency:'₹'}}</td>
+                    <td>{{totalprice()| currency:'₹'}}</td> -->
+                    <!-- <td>{{item.price}}</td>
+                    <td>{{item.price*quantity | currency:'₹'}}</td>
+                    <td>{{totalprice()}}</td> -->
+                </tr></tbody></table>
+                <p><b>Total Amount: {{total| currency:'₹'}}</b></p>
+                <div class="containerstyle">
+                  <div class="rowstyle">
+                <div class="col-md-12">
+              <label>UserName:</label> <input type="text" ng-model="user"/><br>
+        <label>First Name:</label>
+          <input type="text" name="fname" ng-model="fname" placeholder="FirstName" align="left"><br>
+         <label> Last Name:</label>
+    <input type="text" name="lname" ng-model="lname" placeholder="LastName" align="left" required/><br>  
+          <label>Email Id:</label>    
+    <input type="text" name="email" ng-model="email" placeholder="Email" align="left" required/><br>
+    <label>Mobile No.:</label>
+<input type="text" name="mobileno" ng-model="mobileno" placeholder="Mobileno" align="left" required/><br>
+<label>Shipping Address:</label>
+    <input type="text" name="address" ng-model="address" placeholder="Address" align="left" required/>
+    <br>
+    <label>Card Number</label>
+        <input type="text" name="cardnumber" ng-model="cardnumber" placeholder="Card Number" align="left" required/><br>
+        <br><label>Expiry Month and Year:</label><select name="Month">
+          <option value="january">January</option>
+          <option value="february">February</option>
+          <option value="march">March</option>
+          <option value="april">April</option>
+          <option value="may">May</option>
+          <option value="june">June</option>
+          <option value="july">July</option>
+          <option value="august">August</option>
+          <option value="september">September</option>
+          <option value="october">October</option>
+          <option value="november">November</option>
+          <option value="december">December</option>
+        </select><select name="Year">
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+        </select><br>
+        <label>CVV: </label><input type="password" placeholder="CVV"/><br><br>
+  <!-- </div></div>
+  <div class="container">
+                  <div class="row"> -->
+    <!-- <div class="col-md-6"> -->
+    <button ng-click="placeorder()" class="btn btn-outline-blue">Place Order</button></div></div></div>
+              </form>
+              <script>
+              var app = angular.module("angularapp1",[]);
+        app.controller('firstcontroller',function($scope)
+        {$scope.total= localStorage.getItem('fulltotal');
+        $scope.user=localStorage.getItem('user');  
+      var firstname= localStorage.getItem('fname');
+                var lastname=localStorage.getItem('lname');
+                var emailid= localStorage.getItem('email');
+                var mobilenumber=localStorage.getItem('mobileno');
+                var cityname=localStorage.getItem('city');
+                $scope.fname=firstname;
+                $scope.lname=lastname;
+                $scope.email=emailid;
+                $scope.mobileno=mobilenumber;
+                $scope.city=cityname;
+$scope.cartdata=[];
+          $scope.quantity=1;
+          // $scope.total=0;
+          $scope.coupondata=[{'coupontext':'APPLY1000','total':1000},
+          {'coupontext':'APPLY2000','total':2000}];
+          var cartdata = JSON.parse(localStorage.getItem("cartdata"));
+          if(cartdata)
+          {
+            $scope.cartdata=[];
+            for(var i=0;i<cartdata.length;i++)
+            {
+              if(cartdata[i].name)
+              {
+                $scope.cartdata.push(cartdata[i]);
+              }
+            }
+          }
+    //       $scope.totalprice = function(){ 
+    //     for(var j=0;j<cartdata.length;j++){ 
+    //     $scope.total=($scope.cartdata.price * $scope.quantity);
+    //   }
+    //   return ($scope.price*$scope.quant);
+    // }
+    $scope.totalprice = function(){   //Function to calculate total price
+                // $scope.total=0;
+
+        // $scope.total=100;
+        return $scope.total;
+    }
+    $scope.coupon=function(coupondata)
+    {
+      if($scope.coupontext=='APPLY1000')
+      {
+        $scope.total=1000;
+        alert('Coupon Applied');
+      }
+      if($scope.coupontext=='APPLY2000')
+      {
+        $scope.total=2000;
+        alert('Coupon Applied');
+      }
+    }
+    $scope.generatetotal=function()
+    {
+    $scope.fulltotal=0;
+    for(var m=0;m<cartdata.length;m++){
+$scope.fulltotal=($scope.cartdata[m].price*$scope.quantity)-$scope.totalprice()+$scope.fulltotal;
+            localStorage.setItem('fulltotal',$scope.fulltotal);
+
+}}
+$scope.checkout=function()
+{
+  location.href="checkout.html";
+}
+$scope.placeorder=function()
+{
+  location.href="ordersuccess.html";
+}
+            $scope.numberofitems=$scope.cartdata.length;
+        });
+              </script>
+</body>
+</html>

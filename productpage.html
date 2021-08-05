@@ -1,0 +1,273 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-checkbox@2.0.0/dist/js/bootstrap-checkbox.js" defer></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+#grad1
+{
+  background: #047BD5;
+}
+.navbar{
+  background: #047BD5;
+  border-width: 2px;
+  border-color: black;
+  float: left;
+}
+nav a{
+  color: white;
+  font-size: 15px;
+  height: 56px;
+  background: #047BD5;
+ border-color: white;
+}
+img{
+  float: center;
+  width:  50px;
+    height: 40px;
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: #047BD5;
+    text-align: right;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  background-color:white;
+}
+
+.price {
+  color: grey;
+  font-size: 15px;
+}
+
+/*.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: orange;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}*/
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #047BD5;
+  width: auto;
+  text-align: left;
+  /*padding: 68px;*/
+
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  border: 5px solid black;
+    background-image: #047BD5;
+
+  text-align: center;
+}
+.imagehover:hover
+{
+  opacity: 0.2;
+  filter: alpha(opacity=30);
+}
+input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  width: 40%;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+/*.logo-image{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    /*overflow: hidden;
+    margin-top: -6px;*/
+.btn-outline-orange {
+    color: white;
+    background-color: #F7A200;
+    /*border-color: #000000;*/
+}
+.btn-outline-blue {
+    color: white;
+    background-color: #047BD5;
+    /*border-color: #000000;*/
+}
+.btn-fav{
+  color: red;
+}
+.star {
+  font-size: 25px;
+  color:gold;
+}
+  </style>
+  <body>
+    <form ng-app="angularapp1" ng-controller="firstcontroller" name="validateform" novalidate>
+      <!-- <div class="container">
+        <div class="row"> -->
+      <div id="grad1">
+    <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="yellow">E-Commerce Website</font></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="userprofile.html">User</a></li>
+      <li><a href="cart.html"><img src="mobiles/istockphoto-1206806317-612x612.jpg"class="img-fluid">&emsp;<b>{{cartno}}</a></li>
+    </ul>
+  </div>
+</nav>
+<center><label><b>Search</b></label>
+  <input type='text' name='searchproduct' ng-model='searchproduct' placeholder='Search Product'/>&emsp;<label>Hello {{user}}</label>
+  <!-- <div ng-repeat="cartitems in cartdata">
+    {{cartitems.name}}
+  </div> -->
+<div class="grid-container">
+  <div class="grid-item">
+<div class="container">
+      <div class="row">
+    <div ng-repeat='products in mobiledata | filter:searchproduct'>
+      <div class="col-md-6">
+        <center>
+        <div class="imagehover"><a href="viewproduct.html">
+        <!-- <a href="{{.links}}"> --><center>
+      <img ng-src="{{products.photo}}" style="height:200px; width:auto;" /></center>
+    </a><div class="col-md-6">&emsp;<p><center><b>{{products.name}}</b>&emsp;<br><br>{{products.price|currency:'₹'}}</center></p></div>
+      <center><br><br></div></a>
+        <button class="btn-fav" ng-click="fav(products,index)" id='btnfav'>♡</button><br><br><br><br><br><center>
+      <p><button ng-click='addtocart(products,index)' ng-model='addcart' class="btn btn-outline-orange"><b>Add</b></button></p>
+      <p><button ng-click='removecart(mobiles,index)' ng-model='removecart' class="btn btn-outline-blue"><b>Remove</b></button></p>
+      <br><br><br><br><br><br><br>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+    <!-- <div class="card" ng-repeat="mobiles in mobiledata">
+  <div class="col-md-6">
+  <img src="{{mobiles.photo}}" style="width:20%"></div>
+    <div class="col-md-6">
+  {{mobiles.name}}
+  <p class="price">{{mobiles.price}}</p>
+  <p><button ng-click='viewproduct(mobiles,index)' ng-model='viewproduct'>View</button></p></div>
+</div>
+</div>
+</div> -->
+    <!-- <div ng-repeat='mobiles in mobiledata | filter:searchmobile'>
+      <div class="col-md-12">
+      <img ng-src="{{mobiles.photo}}" />&emsp;<b>{{mobiles.name}}</b>&emsp;<b>{{mobiles.price}}</b>
+      <button ng-click='viewproduct(mobiles,index)' ng-model='viewproduct'>View</button>
+    </div>
+    <br><br><br>
+      </div> -->
+    </form>
+    <script>
+      const whiteHeart = '\u2661';
+const blackHeart = '\u2665';
+const button = document.querySelector('button');
+button.addEventListener('click', toggle);
+
+function toggle() {
+  const like = button.textContent;
+  if(like==whiteHeart) {
+    button.textContent = blackHeart;
+  } else {
+    button.textContent = whiteHeart;
+  }
+}
+      var app = angular.module("angularapp1",[]);
+        app.controller('firstcontroller',function($scope)
+        {
+          $scope.searchproduct=localStorage.getItem('searchproduct');
+      $scope.cartno=0;
+      $scope.user= localStorage.getItem('user');
+          $scope.cartdata=[];
+            $scope.mobiledata= [
+                { productid: 1, name: "Redmi 9 Power (Mighty Black, 6GB RAM, 128GB Storage) mobiles", photo: "mobiles/61LHaUOhehL._AC_UY218_.jpg", price:'10999'},
+                {productid: 2, name: "Nokia G20 Smartphone, Dual SIM 4G, 4GB RAM/64GB Storage mobiles", photo: "mobiles/61NoYt2pvpS._AC_UY218_.jpg", price:'12990' },
+                {productid: 3, name: "Redmi 9 (Carbon Black, 4GB RAM, 64GB Storage) mobiles", photo: "mobiles/71A9Vo1BatL._AC_UY218_.jpg", price:'8999' },
+                {productid: 4, name: "Samsung Galaxy M11 (Metallic Blue, 4GB RAM, 64GB Storage) mobiles", photo: "mobiles/71GQUxuSpnS._AC_UY218_.jpg", price:'10499' },
+                {productid: 5, name: "Samsung Galaxy M42 5G mobiles", photo: "mobiles/71LweCKOpFL._AC_UY218_.jpg", price:'21999' },
+                {productid: 6, name: "Redmi 9A (Nature Green, 2GB RAM, 32GB Storage) mobiles", photo: "mobiles/71sxlhYhKWL._AC_UY218_.jpg", price:'6799' },
+                {productid: 7, name: "Samsung Galaxy M11 (Black, 4GB RAM, 64GB Storage) mobiles", photo: "mobiles/710jkZNub3S._AC_UY218_.jpg", price:'9999' },
+                {productid: 8, name: "APPLE iPhone 11 (Black, 64 GB) mobiles", photo: "mobiles/apple-iphone-11-mhda3hn-a-original-imafwqepdb3fxtug.jpeg", price:'49999' },
+                {productid: 9, name: "APPLE iPhone 12 Mini (White, 128 GB) mobiles", photo: "mobiles/apple-iphone-12-mini-dummyapplefsn-original-imafwgbfhfevaajh.jpeg", price:'72900' },
+                {productid: 10, name: "APPLE iPhone 11 Pro (Midnight Green, 64 GB) mobiles", photo: "mobiles/iphone-11-pro-max-256-u-mwhm2hn-a-apple-0-original-imafkg2ftc5cze5n.jpeg", price:'74999' },
+                {productid:11, name:"realme 80 cm (32 inch) HD Ready LED Smart TV  (TV 32)",photo:"mobiles/realme-tv-32-original-imafrz79pweqeafh.jpeg",price:"16999"},
+                {productid:12, name:"Mi 4X 138.8 cm (55 inch) Ultra HD (4K) LED Smart TV", photo:"mobiles/l50m5-5ain-mi-original-imag4969ybwxqwza.jpeg",price:"44999"},
+                // {productid:13, name:"Mi 4A PRO Smart TV", photo:"mobiles/l32m5-al-mi-original-imag4967mvqvpvgp.jpeg",price:"16999"},
+                {productid:14, name:"Apple iPad Pro Tablets", photo:"mobiles/81p1L85KinL._AC_UY218_.jpg",price:"71900"},
+                {productid:15, name:"Lenovo Tab M7 Tablets", photo:"mobiles/za570127in-lenovo-original-imag2bhpgkxhyhr5.jpeg",price:"21999"},
+                {productid:16, name:"TCL Tab 10 Full HD Tablets", photo:"mobiles/9060g-tcl-original-imag56jxcvwgwz2h.jpeg",price:"16999"},
+                {productid:17, name:"acer Aspire 5 Core i5 11th Gen Laptops", photo:"mobiles/na-thin-and-light-laptop-acer-original-imag25zfahpqmyjm.jpeg",price:"54999"},
+                {productid:18, name:"ASUS ROG G703 17.3 FHD 144Hz Gaming Laptops", photo:"mobiles/41+fE9D4s+L.jpg",price:"399990"}
+                ];
+                $scope.favdata=[];
+                $scope.addtocart=function(mobiles,index)
+                {
+                  $scope.emptycart="";
+                  if($scope.cartdata.indexOf(mobiles)!==-1)
+                  {
+                  alert('This product is already added');
+                  }
+                  else
+                  {$scope.cartno++;
+                    $scope.cartdata.push(mobiles);
+                  localStorage.setItem("cartdata", JSON.stringify($scope.cartdata));
+                  }
+                }
+                $scope.removecart=function(mobiles,index)
+                { 
+                  if($scope.cartno==0)
+                  {
+                    $scope.emptycart="CART IS EMPTY";
+                  }
+                  else
+                  {
+                    $scope.cartno--;
+                  $scope.cartdata.splice(index,1);
+                  // localStorage.removeItem(mobiles);
+                  localStorage.setItem("cartdata", JSON.stringify($scope.cartdata));
+                  }
+                }
+                $scope.fav=function(mobiles,index)
+                {  
+                  $scope.favdata.push(mobiles);
+                  localStorage.setItem("favdata", JSON.stringify($scope.favdata));
+
+                }
+              });
+    </script>
+  </body>
+  </html>

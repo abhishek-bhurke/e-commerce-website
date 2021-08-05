@@ -1,0 +1,187 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-checkbox@2.0.0/dist/js/bootstrap-checkbox.js" defer></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+#grad1
+{
+  background: #047BD5;
+}
+.navbar{
+  background: #047BD5;
+  border-width: 2px;
+  border-color: black;
+  float: left;
+}
+nav a{
+  color: white;
+  font-size: 15px;
+  height: 56px;
+  background: #047BD5;
+ border-color: white;
+}
+img{
+  float: center;
+  width:  200px;
+    height: 300px;
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: #047BD5;
+    text-align: right;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  background-color:white;
+}
+
+.price {
+  color: grey;
+  font-size: 15px;
+}
+
+/*.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: orange;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}*/
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #047BD5;
+  width: 95%;
+  text-align: left;
+  /*padding: 68px;*/
+
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  border: 5px solid black;
+    background-image: #047BD5;
+
+  text-align: left;
+}
+.imagehover:hover
+{
+  opacity: 0.2;
+  filter: alpha(opacity=30);
+}
+input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  width: 40%;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+/*.logo-image{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    /*overflow: hidden;
+    margin-top: -6px;*/
+.btn-outline-orange {
+    color: white;
+    background-color: #F7A200;
+    /*border-color: #000000;*/
+}
+.btn-outline-blue {
+    color: white;
+    background-color: #047BD5;
+    /*border-color: #000000;*/
+}
+.btn-fav{
+  color: red;
+}
+.star {
+  font-size: 25px;
+  color:gold;
+}
+  </style>
+  <body>
+    <form ng-app="angularapp1" ng-controller="firstcontroller" name="validateform" novalidate>
+      <div id="grad1">
+    <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="yellow">E-Commerce Website</font></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+      <li><a href="productpage.html">Products</a></li>
+    </ul></div></nav></div>
+    <div class="grid-container">
+  <div class="grid-item">
+<div class="container">
+      <div class="row">
+        <div class="col-md-5"><center>
+        <div ng-repeat="product in mobiledata">
+          <img src="{{product.photo}}">
+          <br><br><br><br>
+        <p><button ng-click='addtocart(product,index)' ng-model='addcart' class="btn btn-outline-orange"><b>Buy Now</b></button></div></div>
+                  <div ng-repeat="product in mobiledata">
+        <div class="col-md-7">
+          <p><b><h4>{{product.name}}</h4></b></p>
+          <p><h2>{{product.price}}</h2><h5><strike>₹13,999</strike>  21% off</h5></p><br>
+          <p><h4>Product Highlights:</h4></p>
+          <ul>
+            <li>4 GB RAM | 64 GB ROM | Expandable Upto 256 GB</li>
+            <li>16.59 cm (6.53 inch) Full HD+ Display</li>
+            <li>48MP + 8MP + 2MP + 2MP | 8MP Front Camera</li>
+            <li>6000 mAh Battery</li>
+            <li>Qualcomm Snapdragon 662 Processor</li>
+            <li>Super AMOLED Display</li>
+          </ul>
+          <center>
+          <!-- <p><button ng-click='addtocart(products,index)' ng-model='addcart' class="btn btn-outline-orange"><b>Buy Now</b></button> -->&emsp;&emsp;
+        <p align="left"><b>Description</b><br>
+48MP quad rear camera, ultra-wide, macro mode, portrait, ai scene recognition, night mode, hdr, pro mode | 8MP front camera, 16.58 centimeters (6.53 inch) FHD+ multi-touch capacitive touchscreen with 2340 x 1080 pixels resolution, 394 ppi pixel density and 19.5:9 aspect ratio, Memory, Storage & SIM: 4GB RAM | 128GB internal memory expandable up to 512GB | Dual SIM + Dedicated SD card slot, Android v10 operating system with upto 2.0GHz clock speed Qualcomm Snapdragon 662 octa core processor, 6000mAH large lithium-polymer battery 18W charging support.</p>
+        </div>
+        <br>
+      </div></div></div></div>
+    </form>
+    <script>
+      var app = angular.module("angularapp1",[]);
+        app.controller('firstcontroller',function($scope)
+        {$scope.mobiledata= [
+                { productid: 1, name: "Redmi 9 Power (Mighty Black, 6GB RAM, 128GB Storage) mobiles", photo: "mobiles/61LHaUOhehL._AC_UY218_.jpg", price:10999}];
+                $scope.cartdata=[];
+          $scope.addtocart=function(product,index)
+                {
+                  $scope.cartdata.push(product);
+                  localStorage.setItem("cartdata", JSON.stringify($scope.cartdata));
+                  location.href="cart.html";
+}
+        });
+      </script></body></html>

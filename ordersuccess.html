@@ -1,0 +1,156 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-checkbox@2.0.0/dist/js/bootstrap-checkbox.js" defer></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+#grad1
+{
+  background: #047BD5;
+}
+.navbar{
+  background: #047BD5;
+  border-width: 2px;
+  border-color: black;
+  float: left;
+}
+nav a{
+  color: white;
+  font-size: 15px;
+  height: 56px;
+  background: #047BD5;
+ border-color: white;
+}
+img{
+  float: center;
+  width:  50px;
+    height: 40px;
+}
+body{
+    margin:0;
+    padding:0;
+    background-color: #047BD5;
+    text-align: center;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+  background-color:white;
+}
+
+.price {
+  color: grey;
+  font-size: 15px;
+}
+
+/*.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: orange;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}*/
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #047BD5;
+  width: auto;
+  text-align: left;
+  /*padding: 68px;*/
+
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 15px;
+  border: 5px solid black;
+    background-image: #047BD5;
+
+  text-align: center;
+}
+.imagehover:hover
+{
+  opacity: 0.2;
+  filter: alpha(opacity=30);
+}
+input[type=text] {
+  float: center;
+  padding: 6px;
+  border: none;
+  width: 40%;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+/*.logo-image{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    /*overflow: hidden;
+    margin-top: -6px;*/
+.btn-outline-orange {
+    color: white;
+    background-color: #F7A200;
+    width: 20%;
+    /*border-color: #000000;*/
+}
+.btn-outline-blue {
+    color: white;
+    background-color: #047BD5;
+    /*border-color: #000000;*/
+}
+</style>
+<body>
+  <form ng-app="angularapp1" ng-controller="firstcontroller" name="validateform" novalidate>
+    <div id="grad1">
+    <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand"><font color="yellow">E-Commerce Website</font></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="homepage.html">Home</a></li>
+            <li><a href="productpage.html">Products</a></li>
+      <li><a href="userprofile.html">User Profile</a></li>      <!-- <li><a href="cart.html"><img src="mobiles/istockphoto-1206806317-612x612.jpg"class="img-fluid">&emsp;<b>{{cartno}}</a></li> -->
+    </ul>
+  </div>
+</nav><br>
+<br>
+</form>
+<script>
+  var app = angular.module("angularapp1",[]);
+        app.controller('firstcontroller',function($scope)
+        {
+          $scope.continueshopping=function()
+          {
+            location.href="productpage.html";
+          }
+        });
+</script>
+<br><br>
+<h1><center><b>ORDER PLACED SUCCESSFULLY</b></center></h1><br><br>
+<button ng-click="continueshopping()" class="btn btn-outline-orange">Continue Shopping</button>
+</body>
+</html>
